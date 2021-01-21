@@ -4,6 +4,7 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  CircularProgress,
   Container,
   makeStyles,
   Typography,
@@ -52,7 +53,7 @@ function App() {
         </Typography>
         <DatePicket clicked={(date: string) => setSelectedDate(date)} />
       </Box>
-      {data && (
+      {data ? (
         <Container maxWidth='sm'>
           <Box my={3}>
             <Card>
@@ -70,6 +71,10 @@ function App() {
             </Card>
           </Box>
         </Container>
+      ) : (
+        <Box height='100vh' display='flex' justifyContent='center' alignItems='center'>
+          <CircularProgress />
+        </Box>
       )}
     </div>
   );
