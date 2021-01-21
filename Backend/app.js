@@ -17,4 +17,4 @@ app.use((req, res, next) => {
   res.send('hello');
 });
 
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
